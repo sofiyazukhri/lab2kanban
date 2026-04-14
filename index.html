@@ -10,7 +10,7 @@
 
     <header>
         <div class="header-content">
-            <h1>Kanban Task Board <id="task-counter">0</h1>
+            <h1>Kanban Task Board <span id="task-counter">0</span></h1>
             <div class="filter-container">
                 <label for="priority-filter">Filter by Priority:</label>
                 <select id="priority-filter">
@@ -24,37 +24,43 @@
     </header>
 
     <main class="board-container">
+
         <section id="todo" class="column">
             <h2>To Do</h2>
-            <button class="btn-dashed add-task-btn" data-column="todo">+ Add Task</button>
+            <button type="button" class="btn-dashed add-task-btn" data-column="todo">+Add Task</button>
             <ul class="task-list"></ul>
         </section>
 
         <section id="inprogress" class="column">
             <h2>In Progress</h2>
-            <button class="btn-dashed add-task-btn" data-column="inprogress">+ Add Task</button>
+            <button type="button" class="btn-dashed add-task-btn" data-column="inprogress">+ Add Task</button>
             <ul class="task-list"></ul> 
         </section>
 
         <section id="done" class="column">
             <h2>Done</h2>
-            <button class="btn-dashed add-task-btn" data-column="done">+ Add Task</button>
+            <button type="button" class="btn-dashed add-task-btn" data-column="done">+ Add Task</button>
             <ul class="task-list"></ul>
             <button id="clear-done-btn">Clear All</button>
         </section>
     </main>
 
+    
     <div id="task-modal" class="modal is-hidden">
         <div class="modal-content">
             <h3>Add New Task</h3>
-            <input type="text" id="task-title" placeholder="Task Title">
+
+            <input type="text" id="task-title" placeholder="Task Title" required>
             <textarea id="task-desc" placeholder="Description"></textarea>
+
             <select id="task-priority">
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
             </select>
+
             <input type="date" id="task-date">
+            
             <div class="modal-actions">
                 <button id="save-task" class="btn-solid">Save</button>
                 <button id="cancel-task">Cancel</button>
